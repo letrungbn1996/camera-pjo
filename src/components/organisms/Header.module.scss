@@ -1,0 +1,174 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+@use 'foundation/animation' as *;
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background: #fff;
+    border-bottom: 1px solid $color-gray;
+    z-index: $z-index-nav;
+
+    .inner {
+        @include flexCenterX2();
+        position: relative;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .headerLeft {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .headerRight {
+        @include flexCenter();
+        position: absolute;
+        top: 0;
+        right: 12px;
+        height: 100%;
+    }
+}
+
+.headerName {
+    position: relative;
+    display: inline-block;
+    padding-right: 20px;
+    color: $color-base;
+    font-size: 20px;
+    font-weight: bold;
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        width: 13px;
+        height: 100%;
+        background: url(/img/icon_arrow_pulldown.svg) right center no-repeat;
+        background-size: 13px auto;
+    }
+
+    &.openFamily {
+        &::after {
+            animation: clickDown 0.2s ease-out forwards;
+        }
+    }
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.backBtn {
+    display: block;
+    padding: 21px 15px;
+}
+
+.drawer {
+    width: 200px;
+}
+
+.drawerHeader {
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid $color-gray;
+}
+
+.drawerList {
+    li {
+        border-bottom: 1px solid $color-gray;
+
+        a {
+            @include flexCenter();
+            position: relative;
+            padding: 0 30px 0 10px;
+            height: 46px;
+            font-size: 15px;
+            line-height: 22px;
+            font-weight: bold;
+
+            &::after {
+                position: absolute;
+                content: '';
+                top: 0;
+                right: 10px;
+                width: 10px;
+                height: 100%;
+                background: url(/img/icon_arrow_right.svg) right center
+                    no-repeat;
+                background-size: 10px auto;
+            }
+        }
+    }
+
+    &.KHA {
+        li {
+            a {
+                &::after {
+                    background: url(/img_kha/icon_arrow_right.svg) right center
+                        no-repeat;
+                    background-size: 10px auto;
+                }
+            }
+        }
+    }
+}
+
+.headerNameMenu {
+    position: relative;
+    margin: 8px;
+    padding: 10px;
+    background: $color-light-primary;
+    border-radius: $border-radius;
+    filter: drop-shadow(0 4px 1px rgba(0, 0, 0, 0.15));
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: -18px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 12px 18px 12px;
+        border-color: transparent transparent $color-light-primary transparent;
+        z-index: 10;
+    }
+}
+
+.status {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    width: 100%;
+    height: 35px;
+    background: #fff;
+    border-bottom: 1px solid $color-gray;
+    box-sizing: border-box;
+    z-index: $z-index-nav - 1;
+    overflow: hidden;
+
+    + .status {
+        top: 100px;
+    }
+
+    :global(.label) {
+        font-size: 13px;
+        font-weight: bold;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}

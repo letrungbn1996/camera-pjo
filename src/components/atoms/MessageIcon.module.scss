@@ -1,0 +1,9 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.chatTelBigBg {
+    padding-top: 44px;
+    width: 100%;
+    background: url(/img/message/icon_tel_wt.svg) center 0 no-repeat;
+    background-size: 34px 34px;
+}

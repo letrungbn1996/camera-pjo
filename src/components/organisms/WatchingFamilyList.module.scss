@@ -1,0 +1,31 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.watchingFamilyListItem {
+    @include flexCenter();
+    position: relative;
+    padding: 12px 110px 12px 15px;
+    margin-bottom: 8px;
+    font-size: 21px;
+    line-height: 28px;
+    text-align: left;
+    background: #fff;
+    border: 1px solid $color-gray;
+    border-radius: $border-radius;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    small {
+        font-size: 15px;
+        line-height: 1;
+    }
+}
+
+.watchingFamilyListItemOption {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translate(0, -50%);
+}

@@ -1,0 +1,114 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.regist {
+    padding: 0 14px;
+}
+
+.section {
+    margin-bottom: 15px;
+    border: 1px solid $color-gray;
+    border-radius: $border-radius;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.registHeader {
+    padding: 5px 14px;
+    background: #f8f8f8;
+    border-radius: $border-radius $border-radius 0 0;
+
+    :global(.headerTitle) {
+        padding: 6px 0;
+        color: #323232;
+        font-size: 15px;
+        line-height: 20px;
+        font-weight: bold;
+    }
+}
+
+.registBody {
+    position: relative;
+    padding: 16px 13px;
+    color: #323232;
+    background: #fff;
+    border-radius: $border-radius;
+}
+
+.registLink {
+    position: relative;
+    display: block;
+    padding: 13px;
+    padding-right: 32px;
+    line-height: 24px;
+    background: #fff;
+    border-radius: 0 0 $border-radius $border-radius;
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 14px;
+        width: 12px;
+        height: 100%;
+        background: url(/img/icon_arrow_right.svg) right center no-repeat;
+        background-size: 8px auto;
+    }
+}
+
+.registInput {
+    margin-bottom: 12px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    :global(.label) {
+        margin-bottom: 6px;
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    :global(.require) {
+        color: $color-accent;
+    }
+
+    :global(.form) + :global(.form) {
+        margin-top: 10px;
+    }
+}
+
+.registConfirm {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid $color-gray;
+
+    &:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: 0;
+    }
+
+    :global(.label) {
+        margin-bottom: 14px;
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    :global(.confirm) {
+        padding-left: 12px;
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
+.registQuestion {
+    position: absolute;
+    bottom: 13px;
+    right: 13px;
+    width: 32px;
+    height: 32px;
+    z-index: 10;
+}

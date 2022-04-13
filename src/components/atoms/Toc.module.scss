@@ -1,0 +1,27 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.tocWrap {
+    padding: 20px;
+}
+
+.tocHead {
+    margin-bottom: 10px;
+}
+
+.tocList {
+    li {
+        padding: 2px;
+        margin: 0 20px;
+        line-height: 1.3;
+        font-size: 14px;
+
+        &::marker {
+            color: #bbb;
+        }
+
+        a {
+            word-break: break-all;
+        }
+    }
+}

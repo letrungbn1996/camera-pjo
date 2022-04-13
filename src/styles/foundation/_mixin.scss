@@ -1,0 +1,27 @@
+@use './settings' as *;
+
+@mixin flexCenter() {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flexCenterX2() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin unreadStyles() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    background: #ed3c26;
+    border-radius: 50%;
+}

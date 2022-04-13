@@ -1,0 +1,47 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+@use 'sass:math';
+
+.favoriteGroup {
+    @include flexCenter();
+    position: relative;
+    padding: 17px 0 17px 36px;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: left;
+    background: #fff;
+    border: 1px solid $color-gray;
+    border-right: 0;
+    border-radius: $border-radius 0 0 $border-radius;
+    box-sizing: border-box;
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 11px;
+        width: 18px;
+        height: 100%;
+        background: url(/img/icon_favorite_off.svg) 0 center no-repeat;
+        background-size: 18px auto;
+    }
+
+    &:global(.active)::before {
+        background: url(/img/icon_favorite.svg) 0 center no-repeat;
+        background-size: 18px auto;
+    }
+
+    :global(.label) {
+        width: calc(100% - 48px);
+    }
+
+    :global(.status) {
+        width: 48px;
+        color: $original-color-primary;
+        font-size: 9px;
+        font-weight: bold;
+        text-align: center;
+    }
+}

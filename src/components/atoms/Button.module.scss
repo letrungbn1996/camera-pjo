@@ -1,0 +1,532 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+@use 'sass:math';
+
+.simpleBtn {
+    display: inline-block;
+    cursor: pointer;
+    font-family: inherit;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.burger {
+    // w25 h21
+    position: relative;
+    display: block;
+    width: 69px;
+    height: 64px;
+    box-sizing: border-box;
+
+    .burgerTop,
+    .burgerMid,
+    .burgerBtm {
+        display: block;
+        position: absolute;
+        left: 22px;
+        width: 25px;
+        height: 3px;
+        background: $bg-primary;
+    }
+    .burgerTop {
+        top: 21px;
+    }
+    .burgerMid {
+        top: 30px;
+    }
+    .burgerBtm {
+        top: 39px;
+    }
+}
+
+.headerUser {
+    display: block;
+    width: 26px;
+}
+
+.drawerClose {
+    @include flexCenterX2();
+    height: 64px;
+    width: 69px;
+}
+
+.changeBtn {
+    display: inline-block;
+    padding: 4px 6px;
+    color: $color-primary;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+    background: $color-light-primary;
+    border: 1px solid $color-dark-gray;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.homeNavBtn {
+    @include flexCenterX2();
+    height: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.chatBigBtn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 110px;
+    height: 110px;
+    background: #fff;
+    border: 2px solid $color-primary;
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: $z-index-nav;
+
+    &.KHA {
+        left: 20px;
+        right: auto;
+        width: 104px;
+        height: 101px;
+        background: url(/img_kha/illust_chat.png) 0 0 no-repeat;
+        background-size: 104px auto;
+        border: 0;
+        overflow: visible;
+        border-radius: 0;
+
+        :global(.chatBtnLabel) {
+            position: absolute;
+            bottom: 0;
+            left: 4px;
+            padding: 5px 0;
+            width: 86px;
+            color: $color-primary;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            background: #fff;
+            border: 1px solid $color-primary;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+    }
+}
+
+.headerHome {
+    display: inline-block;
+    padding: 7px 12px;
+    color: $color-primary;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+    background: #fff;
+    border: 1px solid $color-primary;
+    border-radius: 14px;
+    box-sizing: border-box;
+}
+
+.pharmacyNav {
+    display: inline-block;
+    padding: 6px 12px;
+    color: $color-primary;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: bold;
+    white-space: nowrap;
+    border-radius: 12px;
+    box-sizing: border-box;
+
+    &.active {
+        color: #fff;
+        background: $bg-primary;
+    }
+}
+
+.nextBtn {
+    @include flexCenterX2();
+    height: 50px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    background: $bg-primary;
+    border-radius: 25px;
+    box-sizing: border-box;
+
+    &.disabled {
+        color: #fff;
+        background: $bg-dark-gray;
+    }
+
+    &.large {
+        font-size: 18px;
+    }
+
+    &.medium {
+        display: inline-block;
+        padding: 11px 30px;
+        height: 38px;
+        font-size: 15px;
+        border-radius: 19px;
+    }
+}
+
+.secondaryBtn {
+    @include flexCenterX2();
+    height: 50px;
+    color: $color-primary;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    background: #fff;
+    border: 1px solid $bg-primary;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+
+.finishBtn {
+    @extend .simpleBtn;
+    @include flexCenterX2();
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    background: $bg-primary;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+
+.closeDialogBtn {
+    @extend .simpleBtn;
+    @include flexCenterX2();
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    background: $bg-dark-gray;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+
+.nextDialogBtn {
+    @extend .simpleBtn;
+    @include flexCenterX2();
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    background: $bg-primary;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+
+.submitBtn {
+    @extend .nextDialogBtn;
+    position: relative;
+
+    .loading {
+        @include flexCenterX2();
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.3);
+    }
+}
+
+.policyBtn {
+    @include flexCenter();
+    padding: 6px 24px;
+    width: 100%;
+    min-height: 50px;
+    color: $color-primary;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: bold;
+    background: #fff;
+    border: 1px solid $bg-primary;
+    border-radius: 25px;
+    box-sizing: border-box;
+
+    &.visited {
+        color: #fff;
+        background: $bg-dark-gray;
+        border: 1px solid $bg-dark-gray;
+    }
+}
+
+.registerFamilyBtn {
+    @include flexCenterX2();
+    height: 150px;
+    font-size: 21px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid $color-gray;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+}
+
+.textLinkBtn {
+    color: $color-primary;
+    text-align: center;
+
+    &:global(.disabled) {
+        color: $color-dark-gray;
+    }
+
+    &.small {
+        font-size: 15px;
+    }
+
+    &.smallB {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    &.medium {
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: bold;
+    }
+}
+
+.calendarBigBtn {
+    @include flexCenterX2();
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 92px;
+    height: 92px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+    background: $bg-primary;
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: $z-index-nav;
+}
+
+.listBtn {
+    position: relative;
+    display: block;
+    padding: 8px 32px 8px 15px;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+    background: #fff;
+    border: 1px solid $color-gray;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 12px;
+        width: 8px;
+        height: 100%;
+        background: url(/img/icon_arrow_right.svg) right center no-repeat;
+        background-size: 8px auto;
+    }
+
+    &.KHA {
+        &::after {
+            background: url(/img_kha/icon_arrow_right.svg) right center
+                no-repeat;
+            background-size: 8px auto;
+        }
+    }
+}
+
+.familyGroupBtn {
+    @extend .simpleBtn;
+    position: relative;
+    padding: 12px 15px 12px 45px;
+    width: 100%;
+    height: 100%;
+    font-size: 21px;
+    line-height: 32px;
+    text-align: left;
+    background: #fff;
+    border: 1px solid $color-gray;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: 19px;
+        left: 15px;
+        width: 16px;
+        height: 16px;
+        background: #fff;
+        border: 1px solid $color-gray;
+        border-radius: 50%;
+    }
+
+    &:global(.active) {
+        color: $color-primary;
+        border: 1px solid $color-primary;
+
+        &::before {
+            background: $bg-primary url(/img/icon_check_wt.svg) center center
+                no-repeat;
+            background-size: 13px auto;
+            border: 1px solid $color-primary;
+        }
+    }
+
+    &.small {
+        font-size: 18px;
+        line-height: 24px;
+        background: transparent;
+        border: 0;
+
+        &::before {
+            top: 15px;
+        }
+    }
+}
+
+.familyGroupBtnWith {
+    @extend .familyGroupBtn;
+    border-right: 0;
+    border-radius: $border-radius 0 0 $border-radius;
+
+    &:global(.active) {
+        border-right: 0;
+    }
+
+    &:global(.disabled) {
+        cursor: default;
+        padding-left: 15px;
+
+        &::before {
+            content: none;
+        }
+    }
+}
+
+.familyDetailBtn {
+    @include flexCenterX2();
+    height: 100%;
+    color: #fff;
+    font-size: 21px;
+    text-align: center;
+    background: $bg-primary;
+}
+
+.navListBtn {
+    @extend .simpleBtn;
+    position: relative;
+    padding: 12px 15px;
+    width: 100%;
+    height: 100%;
+    font-size: 21px;
+    line-height: 32px;
+    text-align: left;
+    background: #fff;
+    border: 1px solid $color-gray;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+}
+
+.navListDetailBtn {
+    @include flexCenterX2();
+    height: 100%;
+    color: #fff;
+    font-size: 21px;
+    text-align: center;
+    background: $bg-primary;
+}
+
+.infoCloseBtn {
+    display: block;
+    padding: 5px;
+    width: 18px;
+}
+
+.mapCurrentBtn {
+    @extend .simpleBtn;
+    padding: 0;
+    width: 42px;
+}
+
+.mapSearchBtn {
+    @extend .simpleBtn;
+    padding: 6px 12px;
+    color: $color-primary;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: bold;
+    white-space: nowrap;
+    background: #fff;
+    border: 1px solid $color-primary;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.searchBtn {
+    @include flexCenterX2();
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    background: $bg-primary;
+    border-radius: 0px 6px 6px 0px;
+
+    &.disabled {
+        color: #fff;
+        background: $bg-dark-gray;
+    }
+
+    .loading {
+        @include flexCenterX2();
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.3);
+    }
+}
+
+.selectBtn {
+    position: relative;
+    display: block;
+    padding: 0 26px 0 12px;
+    height: 46px;
+    font-size: 16px;
+    line-height: 44px;
+    background: #fff;
+    border: 1px solid $color-gray;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 46px;
+        background: url(/img/icon_arrow_select.svg) center center no-repeat;
+        background-size: 8px auto;
+    }
+}
+
+.textBtn {
+    font-size: 15px;
+    color: $color-primary;
+}

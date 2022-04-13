@@ -1,0 +1,41 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.onlineNav {
+    @include flexCenterX2();
+    padding: 7px 0;
+
+    li {
+        display: inline-block;
+        padding: 0 12px;
+    }
+}
+
+.onlineLead {
+    @include flexCenter();
+    justify-content: space-between;
+    padding: 12px 14px;
+    background: #fff;
+}
+
+.onlineLeadText {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.onlineLeadLabel {
+    padding: 3px 5px;
+    color: $original-color-primary;
+    font-size: 10px;
+    white-space: nowrap;
+    background: #fff;
+    border: 1px solid $original-color-primary;
+    border-radius: 4px;
+
+    &.inactive {
+        color: #fff;
+        background: $bg-dark-gray;
+        border: 1px solid $bg-dark-gray;
+    }
+}

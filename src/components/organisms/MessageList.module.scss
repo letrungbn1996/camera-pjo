@@ -1,0 +1,102 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.messageSection {
+    margin-bottom: 15px;
+    border: 1px solid $color-dark-gray;
+    border-radius: $border-radius;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.messageTitle {
+    padding: 11px;
+    background: $message-bg-primary;
+    border-radius: $border-radius $border-radius 0 0;
+
+    :global(.headerTitle) {
+        color: #fff;
+        font-size: 15px;
+        line-height: 20px;
+        text-align: center;
+        font-weight: bold;
+    }
+}
+
+.messageBody {
+    padding: 15px;
+    background: #fff;
+    border-radius: 0 0 $border-radius $border-radius;
+}
+
+.messageItem {
+    margin-bottom: 8px;
+    background: #fff;
+    border: 1px solid $color-gray;
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    a {
+        display: block;
+    }
+}
+
+.messageItemHeader {
+    @include flexCenter();
+    justify-content: space-between;
+    padding: 10px 14px;
+    border-bottom: 1px solid $color-gray;
+
+    :global(.message-date) {
+        font-size: 13px;
+    }
+}
+
+.messageItemLink {
+    @include flexCenter();
+    position: relative;
+    padding: 13px 64px 13px 14px;
+    font-size: 16px;
+    line-height: 24px;
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 16px;
+        width: 8px;
+        height: 100%;
+        background: url(/img/message/icon_arrow_right.svg) right center
+            no-repeat;
+        background-size: 8px auto;
+    }
+
+    :global(.unread) {
+        @include unreadStyles();
+        top: 50%;
+        right: 36px;
+        transform: translate(0, -50%);
+    }
+}
+
+.messageItemBody {
+    padding: 12px;
+
+    :global(.message-from) {
+        margin-bottom: 4px;
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    :global(.message-title) {
+        color: $color-primary;
+        line-height: 24px;
+        font-weight: bold;
+    }
+}

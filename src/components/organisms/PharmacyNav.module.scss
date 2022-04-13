@@ -1,0 +1,43 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.pharmacyNav {
+    @include flexCenterX2();
+    margin-top: 8px;
+
+    li {
+        display: inline-block;
+        padding: 0 3px;
+    }
+}
+
+.pharmacySearchNav {
+    padding: 14px 32px 14px;
+}
+
+.pharmacySearchLead {
+    margin-bottom: 14px;
+    line-height: 24px;
+}
+
+.pharmacySearchConsole {
+    display: flex;
+}
+
+.pharmacySearchConsoleSelect {
+    margin-right: 8px;
+    width: 106px;
+}
+
+.pharmacySearchConsoleInput {
+    display: flex;
+    width: calc(100% - 114px);
+}
+
+.pharmacySearchConsoleInputText {
+    width: calc(100% - 56px);
+}
+
+.pharmacySearchConsoleInputNav {
+    width: 56px;
+}

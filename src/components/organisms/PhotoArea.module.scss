@@ -1,0 +1,186 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.photo {
+    padding: 115px 34px 15px;
+    background: #fff;
+}
+
+.photoArea {
+    position: relative;
+    padding-top: 133%;
+    height: 0;
+}
+
+.photoAreaBlank {
+    @include flexCenterX2();
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: bold;
+    text-align: center;
+    background: #d8d8d8;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.thumb {
+    @include flexCenter();
+    margin-top: 15px;
+
+    li {
+        position: relative;
+        margin-right: 5px;
+        width: calc(20% - 4px);
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.current {
+            &::before {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 3px solid $original-color-primary;
+                box-sizing: border-box;
+            }
+        }
+
+        a {
+            display: block;
+        }
+    }
+}
+
+.deleteBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 3px;
+    width: 25px;
+    height: 25px;
+    box-sizing: border-box;
+}
+
+.appNav {
+    @include flexCenterX2();
+    margin-top: 15px;
+
+    li {
+        margin-right: 44px;
+        width: 78px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.appNavBtn {
+    display: block;
+    text-align: center;
+
+    .btnText {
+        margin-top: 8px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    &.disabled {
+        opacity: 0.5;
+    }
+}
+
+.slideWrapper {
+    width: 100%;
+}
+
+.slideItem {
+    @include flexCenterX2();
+    position: relative;
+    padding-top: 133%;
+    height: 0;
+    overflow: hidden;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.nextNav {
+    position: absolute;
+    top: 50%;
+    right: -34px;
+    cursor: pointer;
+    padding: 10px;
+    width: 34px;
+    height: 42px;
+    background: transparent;
+    transform: translate(0, -50%);
+    box-sizing: border-box;
+
+    &:global(.slick-disabled) {
+        opacity: 0.3;
+    }
+
+    &:global(.slick-next) {
+        &:global(::before) {
+            content: none;
+        }
+    }
+}
+
+.prevNav {
+    position: absolute;
+    top: 50%;
+    left: -34px;
+    cursor: pointer;
+    padding: 10px;
+    width: 34px;
+    height: 42px;
+    background: transparent;
+    transform: translate(0, -50%);
+    box-sizing: border-box;
+
+    &:global(.slick-disabled) {
+        opacity: 0.3;
+    }
+
+    &:global(.slick-prev) {
+        &:global(::before) {
+            content: none;
+        }
+    }
+}
+
+.dialogLead {
+    margin-bottom: 22px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dialogBtm {
+    margin: 30px auto 0 auto;
+    width: 100%;
+    text-align: center;
+}

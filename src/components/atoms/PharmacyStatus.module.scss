@@ -1,0 +1,25 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+@use 'sass:math';
+
+.pharmacyStatus {
+    padding: 6px 0;
+    width: 60px;
+    font-size: 9px;
+    line-height: 1;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid $color-gray;
+    border-radius: math.div($border-radius, 2);
+    box-sizing: border-box;
+
+    &.public {
+        color: $original-color-primary;
+        background: #fff;
+    }
+
+    &.private {
+        color: #fff;
+        background: $bg-dark-gray;
+    }
+}

@@ -1,0 +1,40 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.calendarPrevious {
+    :global(.disabled) & {
+        opacity: 0.3;
+    }
+}
+
+.onlineAddBg {
+    padding-left: 16px;
+    background: url(/img/online/icon_add.svg) 0 center no-repeat;
+    background-size: 12px auto;
+}
+
+.pharmacyBg {
+    padding-left: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    background: url(/img/online/icon_pharmacy.svg) 0 4px no-repeat;
+    background-size: 15px auto;
+}
+
+.hangUpBg {
+    padding-top: 72px;
+    background: url(/img/online/icon_hangup.svg) center 0 no-repeat;
+    background-size: 60px auto;
+}
+
+.cameraSwitchBg {
+    padding-top: 72px;
+    background: url(/img/online/icon_camera_switch.svg) center 0 no-repeat;
+    background-size: 60px auto;
+}
+
+.acceptSwitchBg {
+    padding-top: 72px;
+    background: url(/img/online/ic_check.jpg) center 0 no-repeat;
+    background-size: 60px auto;
+}

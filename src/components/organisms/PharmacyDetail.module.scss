@@ -1,0 +1,205 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.pharmacyDetailName {
+    padding: 12px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+    text-align: center;
+    background: #fff;
+}
+
+.pharmacyDetailHeader {
+    padding: 16px 14px;
+    background: #fff;
+}
+
+.pharmacyDetailName + .pharmacyDetailHeader {
+    padding-top: 0;
+}
+
+.pharmacyDetailHeaderName {
+    margin-bottom: 5px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+.pharmacyDetailHeaderDepartment {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 5px 0 10px 0;
+
+    li {
+        margin-right: 6px;
+        margin-bottom: 6px;
+        padding: 4px;
+        width: calc(33% - 4px);
+        font-size: 13px;
+        text-align: center;
+        border: 1px solid $color-dark-gray;
+        box-sizing: border-box;
+
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+
+        &:nth-last-child(-n + 3) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.pharmacyDetailHeaderInfo {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.pharmacyDetailHeaderText,
+.pharmacyDetailAddressText {
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.pharmacyDetailHeaderLink,
+.pharmacyDetailAddressLink {
+    display: flex;
+    justify-content: flex-end;
+
+    li {
+        margin-left: 10px;
+        width: 36px;
+    }
+}
+
+.pharmacyDetailAddress {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 12px 0;
+}
+
+.pharmacyDetailBody {
+    padding: 6px 14px;
+
+    dl {
+        display: flex;
+        padding: 12px 0;
+        border-top: 1px solid $color-gray;
+
+        dt {
+            padding-right: 5px;
+            width: 30%;
+            font-size: 13px;
+            line-height: 18px;
+            font-weight: normal;
+            box-sizing: border-box;
+        }
+
+        dd {
+            width: 70%;
+            font-size: 13px;
+            line-height: 18px;
+            box-sizing: border-box;
+        }
+
+        :global(.attention) {
+            display: inline-block;
+            margin-top: 5px;
+        }
+    }
+}
+
+.pharmacyDetailBtm {
+    padding: 14px 0 30px 0;
+}
+
+.pharmacyDetailExternalLink {
+    display: block;
+    margin: 0 14px;
+    padding: 15px;
+    color: $color-primary;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    border-top: 1px solid $color-gray;
+    border-bottom: 1px solid $color-gray;
+}
+
+.pharmacyDetailAccordionTitle {
+    position: relative;
+    display: block;
+    padding: 14px;
+    font-size: 16px;
+    background: #fff;
+    border-top: 1px solid $color-gray;
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 14px;
+        width: 12px;
+        height: 100%;
+        background: url(/img/icon_arrow_bottom_small.svg) right center no-repeat;
+        background-size: 12px auto;
+        transition: $transition;
+    }
+
+    &:global(.active) {
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.KHA {
+    .pharmacyDetailAccordionTitle {
+        &::after {
+            background: url(/img_kha/icon_arrow_bottom_small.svg) right center
+                no-repeat;
+            background-size: 12px auto;
+        }
+    }
+}
+
+.pharmacyDetailAccordionContent {
+    display: none;
+
+    &:global(.active) {
+        display: block;
+    }
+}
+
+.pharmacyDetailShare {
+    padding: 32px 32px 0;
+}
+
+.pharmacyDetailShareItem {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    :global(.label) {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    :global(.label-sub) {
+        padding-left: 8px;
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    :global(.status) {
+        display: flex;
+    }
+}

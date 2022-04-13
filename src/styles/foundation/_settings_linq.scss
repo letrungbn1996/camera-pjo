@@ -1,0 +1,47 @@
+// LINQ
+$color-base: #{'#000'};
+$color-light-primary: #{'#f6f9fd'};
+$color-primary: #{'#468cd2'};
+$color-gray: #{'#e6e6e6'};
+$color-dark-gray: #{'#c8c8c8'};
+$color-accent: #{'#ff6464'};
+$color-alert: #{'#c92859'};
+$color-attention: #{'#999'};
+$color-placeholder: #{'#a4a4a4'};
+$bg-primary: #{'#468cd2'};
+$bg-chat: #{'#bed7ef'};
+$bg-gray: #{'#f9f9f9'};
+$bg-dark-gray: #{'#bbb'};
+
+// Message
+$message-color-light-primary: #{'#f6f7f7'};
+$message-color-primary: #{'#4b5f64'};
+$message-bg-primary: #{'#4b5f64'};
+
+// Original
+$original-color-light-primary: #{'#f6f9fd'};
+$original-color-primary: #{'#468cd2'};
+$original-bg-primary: #{'#468cd2'};
+
+$min-width: 320px;
+$max-width: 1280px;
+$inner-width: 680px;
+$z-index-nav: 999;
+$z-index-modal: 9999;
+$border-radius: 6px;
+$font-gothic: Hiragino Sans, 'ヒラギノ角ゴシック', 'メイリオ', meiryo,
+    sans-serif;
+$font-mincho: 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E',
+    'ＭＳ Ｐ明朝', 'MS PMincho', 'MS 明朝', serif;
+$transition: all 0.2s ease;
+
+$media: (
+    'narrow': 'screen and (max-width : 800px)',
+    'sp': 'screen and (max-width : 768px)',
+    'hover': 'screen and (min-width : 769px)',
+);
+@mixin mq($breakpoint: sp) {
+    @media #{map-get($media, $breakpoint)} {
+        @content;
+    }
+}

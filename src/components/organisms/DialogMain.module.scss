@@ -1,0 +1,82 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.dialog {
+    padding: 30px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.dialogText {
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: bold;
+}
+
+.dialogComment {
+    margin-top: 20px;
+    padding: 0 6px;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+}
+
+.dialogAttention {
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: left;
+    border: 1px solid $color-gray;
+}
+
+.dialogError {
+    color: $color-accent;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+.dialogNav {
+    @include flexCenterX2();
+    margin: 0 auto;
+    margin-top: 20px;
+    max-width: 310px;
+
+    li {
+        width: calc(50% - 5px);
+        max-width: 150px;
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:global(.big) {
+            width: 100%;
+            max-width: 310px;
+        }
+    }
+}
+
+.dialogLoading {
+    margin-top: 30px;
+}
+
+.dialogList {
+    margin-top: 20px;
+    li {
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.dialogLongText {
+    margin: 20px 0;
+    text-align: left;
+    font-size: 16px;
+    white-space: pre-wrap;
+    line-height: 1.6;
+}

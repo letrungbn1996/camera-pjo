@@ -1,0 +1,125 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.photoLibrary {
+    margin: 0 auto;
+    width: 58px;
+}
+
+.cameraShot {
+    margin: 0 auto;
+    width: 58px;
+}
+
+.scan {
+    width: 34px;
+}
+
+.passcode {
+    width: 36px;
+}
+
+.mapSearch {
+    width: 24px;
+}
+
+.listSearch {
+    width: 30px;
+}
+
+.pagerTop {
+    width: 7px;
+    height: 9px;
+}
+
+.pagerPrev {
+    width: 5px;
+    height: 9px;
+}
+
+.pagerNext {
+    width: 5px;
+    height: 9px;
+}
+
+.pagerLast {
+    width: 7px;
+    height: 9px;
+}
+
+.pharmacyImageBlank {
+    @include flexCenterX2();
+    width: 100%;
+    height: 100%;
+    background: $color-gray;
+
+    &.thmub {
+        :global(.icon) {
+            width: 31px;
+        }
+    }
+
+    &.full {
+        height: 236px;
+        :global(.icon) {
+            width: 62px;
+        }
+    }
+}
+
+.patientIconTitleWith {
+    padding-left: 26px;
+    background: url(/img/icon_title_patient.svg) 0 6px no-repeat;
+    background-size: 19px auto;
+}
+
+.clockIconTitleWith {
+    padding-left: 26px;
+    background: url(/img/icon_title_clock.svg) 0 6px no-repeat;
+    background-size: 19px auto;
+}
+
+.medicineTitleWith {
+    padding-left: 26px;
+    background: url(/img/icon_title_medicine.svg) 0 6px no-repeat;
+    background-size: 19px auto;
+}
+
+.commentTitleWith {
+    padding-left: 26px;
+    background: url(/img/icon_title_comment.svg) 0 8px no-repeat;
+    background-size: 21px auto;
+}
+
+.calendarTitleWith {
+    padding-left: 26px;
+    background: url(/img/icon_title_calendar.svg) 0 8px no-repeat;
+    background-size: 17px auto;
+}
+
+.documentTitleWith {
+    padding-left: 26px;
+    background: url(/img/icon_title_document.svg) 0 6px no-repeat;
+    background-size: 15px auto;
+}
+
+.pharmacyTitleWith {
+    margin-left: -4px;
+    padding-left: 30px;
+    background: url(/img/icon_title_pharmacy.svg) 0 8px no-repeat;
+    background-size: 22px auto;
+}
+
+.paymentTitleWith {
+    margin-left: -1px;
+    padding-left: 27px;
+    background: url(/img/icon_title_payment.svg) 0 9px no-repeat;
+    background-size: 20px auto;
+}
+
+.insuranceTitleWith {
+    margin-left: -1px;
+    padding-left: 27px;
+    background: url(/img/icon_title_insurance.svg) 0 9px no-repeat;
+    background-size: 20px auto;
+}

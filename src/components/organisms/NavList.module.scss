@@ -1,0 +1,21 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.navListItem {
+    display: flex;
+    margin-bottom: 8px;
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.navListItemSelect {
+    width: calc(100% - 80px);
+}
+
+.navListItemLink {
+    width: 80px;
+}

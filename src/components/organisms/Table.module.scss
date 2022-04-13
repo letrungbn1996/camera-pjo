@@ -1,0 +1,40 @@
+@use 'foundation/settings' as *;
+
+.table {
+    width: 100%;
+    font-size: 15px;
+    line-height: 20px;
+    border: 1px solid $color-gray;
+    border-collapse: collapse;
+    box-sizing: border-box;
+
+    th,
+    td {
+        padding: 8px 15px;
+        font-weight: normal;
+        text-align: left;
+        vertical-align: middle;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        border-bottom: 1px solid $color-gray;
+        box-sizing: border-box;
+    }
+
+    th {
+        font-weight: bold;
+        background: $bg-gray;
+    }
+
+    td.th {
+        text-align: center;
+        border-right: 1px solid $color-gray;
+    }
+
+    tr {
+        &:last-child {
+            td {
+                border-bottom: 0;
+            }
+        }
+    }
+}

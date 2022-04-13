@@ -1,0 +1,122 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+@use 'foundation/animation' as *;
+
+.onlineVideo {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+}
+
+.onlineVideoPreview {
+    @include flexCenterX2();
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.onlineVideoCamera {
+    @include flexCenterX2();
+    position: absolute;
+    bottom: 32px;
+    right: 24px;
+    width: 108px;
+    height: 192px;
+    background: #fff;
+    overflow: hidden;
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.callVideo {
+    @include flexCenter();
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    padding: 60px 40px;
+    box-sizing: border-box;
+}
+
+.videoCallText {
+    color: white;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.onlineVideoCall {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.onlineVideoNav {
+    @include flexCenter();
+    position: absolute;
+    bottom: 40px;
+    left: 23px;
+}
+
+.titleCallVideo {
+    font-size: 28px;
+    line-height: 32px;
+    margin-bottom: 0.5rem;
+}
+
+.labelCallVideo {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.onlineVideoAnnounce {
+    @include flexCenterX2();
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 10px;
+    width: 90%;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    background: rgba($color: #fff, $alpha: 0.9);
+    box-sizing: border-box;
+    transform: translate(0, -50%);
+    z-index: $z-index-nav;
+
+    &.initial {
+        opacity: 0;
+    }
+
+    &.fadeIn {
+        animation: fade 1s ease-out 1s forwards;
+    }
+
+    &.fadeOut {
+        animation: fadeout 1s ease-out forwards;
+    }
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

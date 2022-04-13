@@ -1,0 +1,155 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+@use 'foundation/animation' as *;
+
+.pharmacyList {
+    padding: 14px;
+}
+
+.pharmacyItem {
+    position: relative;
+    margin-bottom: 8px;
+    background: #fff;
+    border: 1px solid $color-gray;
+    border-radius: $border-radius;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    a {
+        position: relative;
+        display: flex;
+        width: 100%;
+    }
+
+    .pharmacyItemInner {
+        display: flex;
+    }
+
+    .pharmacyItemWideInner {
+        display: flex;
+    }
+}
+
+.pharmacyBadge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    display: inline-block;
+    padding: 4px 8px;
+    color: $original-color-primary;
+    font-size: 12px;
+    font-weight: bold;
+    background: $original-color-light-primary;
+    border: 1px solid $color-gray;
+    border-radius: 3px;
+}
+
+.pharmacyImg {
+    position: relative;
+    width: 22%;
+    min-width: 100px;
+    border-radius: $border-radius 0 0 $border-radius;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.pharmacyImgLabel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 47px;
+    height: 47px;
+    z-index: 10;
+
+    &.reception-on {
+        background: url(/img/label_reception_on.png) 0 0 no-repeat;
+        background-size: 47px auto;
+    }
+
+    &.reception-off {
+        background: url(/img/label_reception_off.png) 0 0 no-repeat;
+        background-size: 47px auto;
+    }
+
+    &.reception-out {
+        background: url(/img/label_reception_out.png) 0 0 no-repeat;
+        background-size: 47px auto;
+    }
+}
+
+.pharmacyInfo {
+    padding: 12px 6px 12px 12px;
+    width: 78%;
+    min-width: 200px;
+    box-sizing: border-box;
+}
+
+.pharmacyInfoName {
+    padding-right: 10px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+.pharmacyInfoNameWithBadge {
+    padding-right: 60px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+.pharmacyInfoText {
+    margin-top: 5px;
+    font-size: 13px;
+    line-height: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pharmacyInfoLink {
+    display: flex;
+    margin-top: 10px;
+
+    li {
+        margin-right: 24px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.pharmacyInfoDate {
+    margin-bottom: 5px;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.pharmacyInfoWindow {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    opacity: 0;
+
+    &.fadeIn {
+        display: block;
+        animation: fade 0.3s ease-out forwards;
+    }
+}
+
+.pharmacyInfoWindowNav {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    z-index: 20;
+}

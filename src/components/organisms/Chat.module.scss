@@ -1,0 +1,174 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.chat {
+    position: relative;
+    padding-bottom: 70px;
+    min-height: calc(100vh - 100px);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+:global(.header-status + .header-status + .main) {
+    .chat {
+        min-height: calc(100vh - 135px);
+    }
+}
+
+.chatMain {
+    position: relative;
+    padding: 15px;
+    padding-bottom: 110px;
+    height: 0;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+.chatMessage {
+    display: flex;
+    margin-bottom: 18px;
+}
+
+.chatMessageLogo {
+    width: 50px;
+}
+
+.chatMessageLogoImage {
+    @include flexCenterX2();
+    width: 46px;
+    height: 46px;
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid $color-dark-gray;
+    overflow: hidden;
+}
+
+.chatMessageLogoAvatar {
+    width: 39px;
+    height: 39px;
+}
+
+.chatMessageComment {
+    padding-left: 18px;
+    width: calc(100% - 39px);
+    box-sizing: border-box;
+}
+
+.chatMessageCommentText {
+    position: relative;
+    display: inline-block;
+    padding: 10px 12px;
+    max-width: 85%;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: left;
+    word-break: break-all;
+    white-space: pre-wrap;
+    background: #fff;
+    border: 1px solid $color-gray;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: 20px;
+        left: -12px;
+        width: 12px;
+        height: 10px;
+        background: url(/img/fukidashi_chat.svg) 0 0 no-repeat;
+        background-size: 12px auto;
+    }
+}
+
+.chatMessageCommentTextTitle {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.chatMessageCommentTextQuestion {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+    li {
+        margin-right: 10px;
+        width: calc(50% - 5px);
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.chatMessageCommentDate {
+    margin-top: 10px;
+    margin-left: 2px;
+    font-size: 13px;
+    text-align: left;
+}
+
+.selfChatMessage {
+    justify-content: space-between;
+    padding-right: 12px;
+    text-align: right;
+
+    .chatMessageCommentText {
+        &::before {
+            content: none;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: 20px;
+            right: -12px;
+            width: 12px;
+            height: 10px;
+            background: url(/img/fukidashi_chat_self.svg) 0 0 no-repeat;
+            background-size: 12px auto;
+        }
+    }
+
+    .chatMessageCommentDate {
+        text-align: right;
+    }
+}
+
+.chatBtm {
+    display: flex;
+    align-items: flex-end;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 13px 15px;
+    width: 100%;
+    background: #fff;
+    z-index: $z-index-nav;
+    box-sizing: border-box;
+}
+
+.chatBtmInput {
+    width: calc(100% - 96px);
+    transition: $transition;
+
+    &.wide {
+        width: calc(100% - 48px);
+    }
+}
+
+.chatBtmNav {
+    display: flex;
+    width: 96px;
+    transition: $transition;
+
+    &.narrow {
+        width: 48px;
+    }
+
+    li {
+        padding-left: 8px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

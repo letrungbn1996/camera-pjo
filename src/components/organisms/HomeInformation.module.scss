@@ -1,0 +1,29 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.information {
+    background: #fff;
+    border: 1px solid $color-gray;
+    border-radius: $border-radius;
+    overflow: hidden;
+}
+
+.informationHeader {
+    padding: 14px 12px;
+    font-size: 13px;
+    border-bottom: 1px solid $color-gray;
+}
+
+.informationBody {
+    padding: 12px;
+
+    li {
+        margin-bottom: 8px;
+        font-size: 15px;
+        line-height: 22px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

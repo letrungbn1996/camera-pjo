@@ -1,0 +1,54 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.accordion {
+    margin-bottom: 8px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.accordionTitle {
+    position: relative;
+    display: block;
+    margin-bottom: 5px;
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        width: 12px;
+        height: 100%;
+        background: url(/img/icon_arrow_bottom_small.svg) right center no-repeat;
+        background-size: 12px auto;
+        transition: $transition;
+    }
+
+    &:global(.active) {
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.KHA {
+    .accordionTitle {
+        &::after {
+            background: url(/img_kha/icon_arrow_bottom_small.svg) right center
+                no-repeat;
+            background-size: 12px auto;
+        }
+    }
+}
+
+.accordionContent {
+    display: none;
+    padding-left: 13px;
+    padding-bottom: 10px;
+
+    &:global(.active) {
+        display: block;
+    }
+}

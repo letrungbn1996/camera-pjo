@@ -1,0 +1,65 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+$space: 4;
+
+.stack {
+    display: flex;
+
+    &:global(.spacing0) {
+        .stackItem {
+            margin-right: 0;
+        }
+    }
+
+    &:global(.spacing1) {
+        .stackItem {
+            margin-right: $space * 1 + px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &:global(.spacing2) {
+        .stackItem {
+            margin-right: $space * 2 + px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.stackItem {
+    width: 100%;
+
+    &:global(.width24) {
+        width: 24%;
+    }
+
+    &:global(.width76) {
+        width: 76%;
+    }
+}
+
+.stackItemInline {
+    display: inline-block;
+    padding-right: 20px;
+}
+
+.stackMulti {
+    display: flex;
+    flex-wrap: wrap;
+
+    .stackItem {
+        margin-bottom: 14px;
+        width: 50%;
+
+        &:nth-last-child(-n + 2) {
+            margin-bottom: 0;
+        }
+    }
+}

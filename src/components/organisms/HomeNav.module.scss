@@ -1,0 +1,26 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.nav {
+    background: #fff;
+    border: 1px solid $color-gray;
+    border-radius: $border-radius;
+    overflow: hidden;
+}
+
+.navHeader {
+    padding: 14px 12px;
+    font-size: 13px;
+    border-bottom: 1px solid $color-gray;
+}
+
+.navBody {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 14px 12px;
+}
+
+.navItem {
+    width: 33%;
+    height: 100px;
+}

@@ -1,0 +1,133 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.headerOnlineAddBtn {
+    display: inline-block;
+    padding: 7px 12px;
+    color: $original-color-primary;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+    background: #fff;
+    border: 1px solid $original-color-primary;
+    border-radius: 14px;
+    box-sizing: border-box;
+}
+
+.onlineNav {
+    display: inline-block;
+    padding: 6px 12px;
+    color: #999;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: bold;
+    white-space: nowrap;
+    border-radius: 12px;
+    box-sizing: border-box;
+
+    &.active {
+        color: #fff;
+        background: $original-bg-primary;
+    }
+}
+
+.countDownBtn {
+    @include flexCenterX2();
+    height: 50px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    background: #ef6666;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+
+.videoNavBtn {
+    display: block;
+    width: 84px;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+}
+
+.pharmacySelectBtn {
+    @include flexCenterX2();
+    height: 50px;
+    padding: 0 13px;
+    color: $original-color-primary;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid $original-color-primary;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+}
+
+.unregisteredBtn {
+    position: relative;
+    display: block;
+    padding: 13px 32px 13px 15px;
+    color: #999;
+    background: #fff;
+    border: 1px solid $color-gray;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 14px;
+        width: 8px;
+        height: 100%;
+        background: url(/img/icon_arrow_right.svg) right center no-repeat;
+        background-size: 8px auto;
+    }
+}
+
+.calendarPreviousBtn {
+    display: block;
+    padding: 4px 8px;
+    width: 8px;
+    height: 11px;
+}
+
+.calendarNextBtn {
+    display: block;
+    padding: 4px 8px;
+    width: 7px;
+    height: 11px;
+}
+
+.timetableBtn {
+    position: relative;
+    display: block;
+    padding: 12px 32px 12px 10px;
+    font-size: 16px;
+    background: #fff;
+    border: 1px solid $color-gray;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 12px;
+        width: 8px;
+        height: 100%;
+        background: url(/img/icon_arrow_right.svg) right center no-repeat;
+        background-size: 8px auto;
+    }
+}
+
+.deleteImageBtn {
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    padding: 10px;
+    width: 19px;
+    height: 19px;
+}

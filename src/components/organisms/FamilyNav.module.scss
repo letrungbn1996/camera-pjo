@@ -1,0 +1,11 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.familyNav {
+    @include flexCenterX2();
+
+    li {
+        display: inline-block;
+        padding: 0 16px;
+    }
+}

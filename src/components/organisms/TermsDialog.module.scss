@@ -1,0 +1,50 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.termsDialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: $z-index-modal;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    &.fadeIn {
+        pointer-events: auto;
+        opacity: 1;
+    }
+}
+
+.termsDialogMain {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: calc(100% - 38px);
+    height: 70vh;
+
+    .termsDialogMainInner {
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+        background: #fff;
+        border-radius: $border-radius;
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+}
+
+.termsDialogMainNav {
+    position: absolute;
+    bottom: -70px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 150px;
+}

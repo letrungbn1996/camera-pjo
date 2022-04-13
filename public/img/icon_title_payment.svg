@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="14px" viewBox="0 0 20 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 9</title>
+    <g id="オンライン服薬指導（共通）" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="MPP-SRA-C-1.申込詳細画面1" transform="translate(-26.000000, -684.000000)">
+            <g id="Group-9" transform="translate(26.000000, 684.000000)">
+                <polygon id="Fill-1" fill="#FFFFFF" points="1 14 20 14 20 1 1 1"></polygon>
+                <path d="M0,14 L20,14 L20,0 L0,0 L0,14 Z M1.33669609,12.6611272 L18.6640245,12.6611272 L18.6640245,1.33959538 L1.33669609,1.33959538 L1.33669609,12.6611272 Z" id="Fill-2" fill="#0B63B0"></path>
+                <path d="M1,10.5 L19,10.5 L1,10.5 Z" id="Fill-3" fill="#FFFFFF"></path>
+                <polygon id="Fill-4" fill="#0B63B0" points="1 11 19 11 19 10 1 10"></polygon>
+                <path d="M4,4.5 L9,4.5 L4,4.5 Z" id="Fill-5" fill="#FFFFFF"></path>
+                <polygon id="Fill-6" fill="#64B4E6" points="4 5 9 5 9 4 4 4"></polygon>
+                <path d="M4,7.5 L17,7.5 L4,7.5 Z" id="Fill-7" fill="#FFFFFF"></path>
+                <polygon id="Fill-8" fill="#0B63B0" points="4 8 17 8 17 7 4 7"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,92 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.mapA {
+    position: relative;
+    min-height: calc(100vh - 65px - 35px - 70px);
+}
+
+.mapAreaA {
+    position: relative;
+    height: 0;
+    min-height: calc(100vh - 65px - 35px - 70px - 80px);
+}
+
+.mapB {
+    position: relative;
+    min-height: calc(100vh - 65px - 38px);
+}
+
+.mapAreaB {
+    position: relative;
+    height: 0;
+    min-height: calc(100vh - 65px - 38px - 80px);
+}
+
+.mapC {
+    position: relative;
+}
+
+.prescriptionPharmacy {
+    height: calc(100vh - 65px - 35px - 160px - 70px);
+}
+
+.registerPharmacy {
+    height: calc(100vh - 65px - 35px - 340px);
+}
+
+.mapAreaC {
+    position: relative;
+    height: 100%;
+}
+
+.mapD {
+    position: relative;
+    min-height: calc(100vh - 65px - 35px - 70px - 74px);
+}
+
+.mapAreaD {
+    position: relative;
+    height: 0;
+    min-height: calc(100vh - 65px - 35px - 70px - 74px - 80px);
+}
+
+.mapBtm {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: $color-light-primary;
+    z-index: $z-index-nav;
+
+    &.LINQ {
+        background: $original-color-light-primary;
+    }
+
+    &.KHA {
+        background: $color-light-primary;
+    }
+}
+
+.mapBtmInner {
+    margin: 15px auto;
+    max-width: 310px;
+}
+
+.mapCurrent {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: $z-index-nav;
+}
+
+.mapSearch {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    z-index: $z-index-nav;
+}

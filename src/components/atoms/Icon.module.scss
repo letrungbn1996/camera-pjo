@@ -1,0 +1,185 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.close {
+    width: 22px;
+}
+
+.scan {
+    width: 34px;
+}
+
+.passcode {
+    width: 36px;
+}
+
+.photoLibrary {
+    margin: 0 auto;
+    width: 58px;
+}
+
+.cameraShot {
+    margin: 0 auto;
+    width: 58px;
+}
+
+.pharmacyImageBlank {
+    @include flexCenterX2();
+    width: 100%;
+    height: 100%;
+    background: $color-gray;
+
+    &.thmub {
+        :global(.icon) {
+            width: 31px;
+        }
+    }
+
+    &.full {
+        height: 236px;
+        :global(.icon) {
+            width: 62px;
+        }
+    }
+}
+
+.endingCharacterIconKHA {
+    width: 146px;
+    height: 130px;
+}
+
+.notebookBg {
+    padding-top: 60px;
+    background: url(/img/icon_medical_notebook.svg) center 0 no-repeat;
+    background-size: 34px auto;
+}
+
+.notebookBgKHA {
+    padding-top: 60px;
+    background: url(/img_kha/icon_medical_notebook.svg) center 0 no-repeat;
+    background-size: 34px auto;
+}
+
+.sendBg {
+    padding-top: 60px;
+    background: url(/img/icon_send.svg) center 7px no-repeat;
+    background-size: 52px auto;
+}
+
+.sendBgKHA {
+    padding-top: 60px;
+    background: url(/img_kha/icon_send.svg) center 7px no-repeat;
+    background-size: 52px auto;
+}
+
+.messageBg {
+    position: relative;
+    padding-top: 60px;
+    background: url(/img/icon_message.svg) center 4px no-repeat;
+    background-size: 43px auto;
+
+    :global(.unread) {
+        @include unreadStyles();
+        top: -8px;
+        right: 0px;
+    }
+}
+
+.messageBgKHA {
+    position: relative;
+    padding-top: 60px;
+    background: url(/img_kha/icon_message.svg) center 4px no-repeat;
+    background-size: 43px auto;
+
+    :global(.unread) {
+        @include unreadStyles();
+        top: -8px;
+        right: 0px;
+    }
+}
+
+.vitalBg {
+    padding-top: 60px;
+    background: url(/img/icon_vital.svg) center 3px no-repeat;
+    background-size: 24px auto;
+}
+
+.vitalBgKHA {
+    padding-top: 60px;
+    background: url(/img_kha/icon_vital.svg) center 3px no-repeat;
+    background-size: 24px auto;
+}
+
+.mealBg {
+    padding-top: 60px;
+    width: 100%;
+    background: url(/img/icon_meal.svg) center 8px no-repeat;
+    background-size: 56px auto;
+}
+
+.mealBgKHA {
+    padding-top: 60px;
+    width: 100%;
+    background: url(/img_kha/icon_meal.svg) center 8px no-repeat;
+    background-size: 56px auto;
+}
+
+.calendarBg {
+    padding-top: 60px;
+    width: 100%;
+    background: url(/img/icon_calendar.svg) center 6px no-repeat;
+    background-size: 54px auto;
+}
+
+.calendarBgKHA {
+    padding-top: 60px;
+    width: 100%;
+    background: url(/img_kha/icon_calendar.svg) center 6px no-repeat;
+    background-size: 54px auto;
+}
+
+.medicalInstitutionBgKHA {
+    padding-top: 60px;
+    width: 100%;
+    background: url(/img_kha/icon_medical_institution.svg) center 4px no-repeat;
+    background-size: 49px auto;
+}
+
+.chatBigBg {
+    padding-top: 8px;
+    width: 100%;
+    height: 100%;
+    color: $color-primary;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    background: url(/img/illust_cat.png) center bottom no-repeat;
+    background-size: 59px 65px;
+    box-sizing: border-box;
+}
+
+.familyBigBg {
+    padding-top: 82px;
+    width: 100%;
+    background: url(/img/icon_family_large.svg) center 0 no-repeat;
+    background-size: 90px 64px;
+}
+
+.familyBigBgKHA {
+    padding-top: 82px;
+    width: 100%;
+    background: url(/img_kha/icon_family_large.svg) center 0 no-repeat;
+    background-size: 90px 64px;
+}
+
+.corporateBg {
+    padding-left: 18px;
+    background: url(/img/logo_sakura.svg) 0 center no-repeat;
+    background-size: 12px auto;
+}
+
+.corporateBgKHA {
+    padding-left: 18px;
+    background: url(/img_kha/logo_sakura.svg) 0 center no-repeat;
+    background-size: 12px auto;
+}

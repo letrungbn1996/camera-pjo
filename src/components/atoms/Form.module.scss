@@ -1,0 +1,307 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.formText {
+    display: block;
+    padding: 0 12px;
+    width: 100%;
+    height: 46px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 44px;
+    background: #fff;
+    border: 1px solid $color-gray;
+    outline: none;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transition: $transition;
+
+    &:focus {
+        border-color: $color-primary;
+        box-shadow: 0 0 4px 0px $color-primary;
+    }
+
+    &:disabled {
+        background: $bg-dark-gray;
+    }
+
+    &.textCenter {
+        text-align: center;
+    }
+
+    &.error:not(:disabled) {
+        border-color: $color-accent;
+
+        &:focus {
+            box-shadow: 0 0 4px 0px $color-accent;
+        }
+    }
+
+    &:global(.typeSearch) {
+        background-image: url(/img/icon_search.svg);
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        background-size: 16px;
+        padding: 0 12px 0 32px;
+    }
+}
+
+.formZipText {
+    @extend .formText;
+    border-radius: 6px 0 0 6px;
+}
+
+.formTextarea {
+    @extend .formText;
+    resize: vertical;
+    padding: 6px 12px;
+    height: auto;
+    line-height: 24px;
+}
+
+.formChatarea {
+    @extend .formText;
+    resize: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 9px 12px;
+    height: 100%;
+    line-height: 24px;
+    letter-spacing: inherit;
+    overflow: hidden;
+}
+
+.selectWrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+
+    &::after {
+        pointer-events: none;
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 46px;
+        background: url(/img/icon_arrow_select.svg) center center no-repeat;
+        background-size: 8px auto;
+        z-index: 2;
+    }
+}
+
+.formSelect {
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+    padding: 0 0 0 12px;
+    width: 100%;
+    height: 46px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 44px;
+    background: #fff;
+    border: 1px solid $color-gray;
+    appearance: none;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+    z-index: 1;
+    transition: $transition;
+
+    &:focus {
+        outline: none;
+        border-color: $color-primary;
+        box-shadow: 0 0 4px 0px $color-primary;
+    }
+
+    &::-ms-expand {
+        display: none;
+    }
+
+    &:disabled {
+        cursor: default;
+        background: $bg-dark-gray;
+    }
+}
+
+.formRadio {
+    display: none;
+
+    + label {
+        @include flexCenter();
+        cursor: pointer;
+        position: relative;
+        padding-left: 25px;
+        font-size: 15px;
+        line-height: 22px;
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 0;
+            width: 18px;
+            height: 18px;
+            background: #fff;
+            border: 1px solid $color-gray;
+            border-radius: 50%;
+            box-sizing: border-box;
+            transition: $transition;
+            transform: translate(0, -50%);
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 3px;
+            width: 12px;
+            height: 12px;
+            background: $bg-primary;
+            border-radius: 50%;
+            box-sizing: border-box;
+            transform: translate(0, -50%);
+            opacity: 0;
+            transition: $transition;
+        }
+    }
+
+    &:checked {
+        + label {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.formRadioBtn {
+    display: none;
+
+    + label {
+        @include flexCenterX2();
+        cursor: pointer;
+        padding: 0 10px;
+        width: 100%;
+        height: 46px;
+        font-size: 16px;
+        line-height: 44px;
+        text-align: center;
+        background: #fff;
+        border: 1px solid $color-gray;
+        outline: none;
+        border-radius: $border-radius;
+        box-sizing: border-box;
+        transition: $transition;
+    }
+
+    &:checked {
+        + label {
+            color: #fff;
+            background: $bg-primary;
+            border: 1px solid $color-primary;
+        }
+    }
+
+    &:disabled {
+        + label {
+            cursor: default;
+            color: #666;
+            background: $bg-dark-gray;
+        }
+    }
+}
+
+.formCheckbox {
+    display: none;
+
+    + label {
+        display: block;
+        cursor: pointer;
+        position: relative;
+        padding-left: 30px;
+        min-height: 44px;
+        font-size: 15px;
+        line-height: 22px;
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: 1px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid $color-gray;
+            border-radius: 3px;
+            box-sizing: border-box;
+            transition: $transition;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            display: block;
+            top: 4px;
+            left: 3px;
+            width: 16px;
+            height: 9px;
+            border-left: 3px solid #fff;
+            border-bottom: 3px solid #fff;
+            box-sizing: border-box;
+            transform: rotate(-45deg);
+            opacity: 0;
+            transition: $transition;
+        }
+    }
+
+    &:checked {
+        + label {
+            &::before {
+                background: $bg-primary;
+                border: 1px solid $color-primary;
+            }
+
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &.minimum {
+        + label {
+            min-height: 0;
+        }
+    }
+}
+
+.searchBtn {
+    @include flexCenterX2();
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    background: $bg-primary;
+    border-radius: 0px 6px 6px 0px;
+}
+
+.errorText {
+    display: block;
+    margin-top: 8px;
+    color: $color-accent;
+    font-size: 15px;
+}
+
+.errorButtonText {
+    display: block;
+    margin-bottom: 8px;
+    color: $color-accent;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    white-space: pre-wrap;
+}

@@ -1,0 +1,15 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.onlineBadge {
+    display: inline-block;
+    padding: 4px 8px;
+    color: $original-color-primary;
+    font-size: 10px;
+    line-height: 1;
+    white-space: nowrap;
+    font-weight: bold;
+    background: #fff;
+    border: 1px solid $original-color-primary;
+    border-radius: 4px;
+}

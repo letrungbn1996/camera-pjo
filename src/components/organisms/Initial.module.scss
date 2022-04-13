@@ -1,0 +1,124 @@
+@use 'foundation/settings' as *;
+@use 'foundation/mixin' as *;
+
+.initial {
+    position: relative;
+    padding: 120px 32px 100px;
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    &.multiNav {
+        padding-bottom: 135px;
+    }
+
+    :global(.pincode-input-container) {
+        display: flex;
+    }
+
+    :global(.pincode-input-text) {
+        margin: 0 3px !important;
+        width: 100% !important;
+        height: 60px !important;
+        font-size: 16px;
+        line-height: 58px;
+        background: #fff !important;
+        border: 1px solid $color-gray !important;
+        outline: none;
+        border-radius: $border-radius;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        transition: $transition;
+
+        &:focus {
+            border-color: $color-primary !important;
+            box-shadow: 0 0 4px 0px $color-primary !important;
+        }
+    }
+
+    :global(.error) {
+        :global(.pincode-input-text) {
+            border-color: $color-accent !important;
+
+            &:focus {
+                border-color: $color-accent !important;
+                box-shadow: 0 0 4px 0px $color-accent !important;
+            }
+        }
+    }
+}
+
+:global(.regist-nav) + .initial {
+    padding-top: 126px;
+}
+
+.initialSection {
+    margin-bottom: 30px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.initialLead {
+    line-height: 24px;
+    white-space: pre-wrap;
+}
+
+.initialAttention {
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.initialCamera {
+    position: relative;
+    padding-top: 100%;
+    height: 0;
+    background: #000;
+}
+
+.initialCameraArea {
+    @include flexCenterX2();
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.initialBtm {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 310px;
+}
+
+.initialBtmCharacter {
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    z-index: 10;
+}
+
+.initialFinishAnimation {
+    position: relative;
+    height: 300px;
+
+    :global(.animationInner) {
+        @include flexCenterX2();
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+}
