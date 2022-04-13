@@ -76,7 +76,7 @@ const OnlineVideoTestPage: React.FC = () => {
     return (
         <>
             <DefaultLayout>
-                {/* <OnlineVideo>
+                <OnlineVideo>
                     <OnlineVideoAnnounce
                         initial={count <= 1}
                         fadeIn={count === 1}
@@ -143,9 +143,8 @@ const OnlineVideoTestPage: React.FC = () => {
                             </VideoNavButton>
                         </li>
                     </OnlineVideoNav>
-                </OnlineVideo> */}
-                <video onCanPlay={() => paintToCanvas()} ref={videoRef} />
-                <canvas ref={photoRef} />
+                    <video onCanPlay={() => paintToCanvas()} ref={videoRef} />
+                </OnlineVideo>
             </DefaultLayout>
         </>
     )
