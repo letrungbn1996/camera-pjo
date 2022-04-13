@@ -143,7 +143,7 @@ const OnlineVideoTestPage: React.FC = () => {
                             </VideoNavButton>
                         </li>
                     </OnlineVideoNav>
-                    <video onCanPlay={() => paintToCanvas()} ref={videoRef} />
+                    <video onCanPlay={() => paintToCanvas()} ref={videoRef} style={{ width: '100%'}}/>
                 </OnlineVideo>
             </DefaultLayout>
         </>
