@@ -15,8 +15,9 @@ import {
 const OnlineVideoTestPage: React.FC = () => {
     const [isRunning, setRunning] = useState(false)
     const [count, setCount] = useState(0)
+    const [facingMode, setFacingMode] = useState('user')
     const videoRef = useRef(null);
-  const photoRef = useRef(null);
+    const photoRef = useRef(null);
     useEffect(() => {
         if (isRunning) {
             let myInterval = setInterval(() => {
@@ -43,12 +44,12 @@ const OnlineVideoTestPage: React.FC = () => {
 
     useEffect(() => {
       getVideo();
-    }, [videoRef]);
+    }, [videoRef, facingMode]);
     
 
     const getVideo = () => {
       navigator.mediaDevices
-        .getUserMedia({ video: { width: 300 , facingMode: 'environment'} })
+        .getUserMedia({ video: { width: 300 , facingMode} })
         .then(stream => {
             console.log(stream);
             
@@ -125,6 +126,13 @@ const OnlineVideoTestPage: React.FC = () => {
                             </VideoNavButton>
                         </li>
                         <li
+                            onClick={() => {
+                                if (facingMode === 'user') {
+                                    setFacingMode('environment')
+                                } else {
+                                    setFacingMode('user')
+                                }
+                            }}
                         >
                             <VideoNavButton
                                 href="#"
