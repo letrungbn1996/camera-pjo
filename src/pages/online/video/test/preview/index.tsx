@@ -40,6 +40,7 @@ const OnlineVideoTestPage: React.FC = () => {
             setRunning(true)
         }, 1000)
     }, [])
+
     useEffect(() => {
       getVideo();
     }, [videoRef]);
@@ -47,8 +48,10 @@ const OnlineVideoTestPage: React.FC = () => {
 
     const getVideo = () => {
       navigator.mediaDevices
-        .getUserMedia({ video: { width: 300, facingMode: 'environment' } })
+        .getUserMedia({ video: { width: 300 , facingMode: 'environment'} })
         .then(stream => {
+            console.log(stream);
+            
           let video:any = videoRef.current;
           video.srcObject = stream;
           video.play();
@@ -103,20 +106,12 @@ const OnlineVideoTestPage: React.FC = () => {
                         こちらでテストは終了です。通話をお切りください。
                     </OnlineVideoAnnounce>
                     <OnlineVideoPreview>
-                        <video
-                            // ref={videoRef}
-                            autoPlay
-                            playsInline
-                            muted
-                        ></video>
+                        <video onCanPlay={() => paintToCanvas()} ref={videoRef} style={{ width: '100%', height: '100%'}}/>
+
                     </OnlineVideoPreview>
                     <OnlineVideoCamera>
-                        <video
-                            // ref={videoRef}
-                            autoPlay
-                            playsInline
-                            muted
-                        ></video>
+                        <video onCanPlay={() => paintToCanvas()} ref={videoRef} style={{ width: '100%', height: '100%'}}/>
+
                     </OnlineVideoCamera>
                     <OnlineVideoNav>
                         <li>
@@ -143,7 +138,6 @@ const OnlineVideoTestPage: React.FC = () => {
                             </VideoNavButton>
                         </li>
                     </OnlineVideoNav>
-                    <video onCanPlay={() => paintToCanvas()} ref={videoRef} style={{ width: '100%'}}/>
                 </OnlineVideo>
             </DefaultLayout>
         </>
