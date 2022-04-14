@@ -47,7 +47,7 @@ const OnlineVideoTestPage: React.FC = () => {
 
     const getVideo = () => {
       navigator.mediaDevices
-        .getUserMedia({ video: { width: 300 } })
+        .getUserMedia({ video: { width: 300, facingMode: 'environment' } })
         .then(stream => {
           let video:any = videoRef.current;
           video.srcObject = stream;
